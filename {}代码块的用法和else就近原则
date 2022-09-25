@@ -1,0 +1,29 @@
+#include<stdio.h>
+int main()
+{
+	int a = 2;         //这样是什么都打印不出来的，因为编辑器是先读if（a==1），但
+	int b = 3;        //因为不成立所以跳过了下面的一大块
+	if (a == 1)              //这就体现了代码块写法的高明性，下面是用代码块的写法
+		if (b == 3)          //if(a==1)
+			printf("haha\n");//{   if(b==3)
+		else                  //  printf("haha\n");
+			printf("xixi\n");//   else
+	return 0;                //       printf("xixi\n");
+}                            //  }   
+                             //  return 0;     这样编辑器是怎么执行的就一目了然了 
+
+/*这是达到目的的写法
+int main()
+  {
+   int a=2;                这样打印出来的结果是xixi，这是代码块的第二个用法，
+   int b=3;                就是，除了容易理解外还能分区，
+   if(a==1)                这里{}里面的东西就是if（a==1）的内容，因为else有就近
+  {                         原则，如果不用{}像上面一样会出现if（b==3）与else是
+  if(b==3)                  一体的都属于if（a==1）的内容，又因为a不等于1，所以
+  printf("haha\n");          什么都打印不出来
+  }
+  else
+  printf("xixi\n");
+  return 0;                 
+
+  }*/
