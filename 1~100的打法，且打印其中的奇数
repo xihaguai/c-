@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main()
+{
+	int a = 1;
+	while (a <=100)
+	{	
+		if (a%2== 1)//注意这里的if后面不要加;不然会打印1~100，我就是这里错了
+			printf("%d\n", a);
+			a++;	
+	}
+	return 0;
+
+}
+
+第二种方法
+#include<stdio.h>
+int main()
+{
+	int a = 1;
+	while (a <=100)
+	{	
+			printf("%d\n", a);
+			a += 2;//这是打印奇数的另一种思路，1+2=3，3+2=5，......97+2=99
+	}
+	return 0;
+
+}
