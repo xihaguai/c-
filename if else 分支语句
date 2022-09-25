@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main()
+{
+	int age;
+	scanf("%d", &age);//用{}括起来的叫代码块，这是一个习惯，好理解
+	if (age < 18)
+	{
+		printf("未成年\n");
+		printf("禁止早恋\n");
+	}
+	else if (age >= 18 && age < 30)//这是if  else语句的升级版，else if可以有多个
+		                           //选项分的更细
+		printf("青年\n");
+	else if (age >= 30 && age < 50)//注意：这里的大于并小于不能写成30=<age<50，
+                                   //因为编辑器会先读30=<age如果age大于等于30就会
+		                           //直接打印壮年，那age<50就起不到作用了就是age=80
+		                           //也是打印壮年
+		printf("壮年\n");
+	else if (age >= 50 && age < 100)
+		printf("老年\n");
+	else
+		printf("老不死\n");
+	return 0;
+}
